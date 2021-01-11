@@ -12,7 +12,8 @@ import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 
 const useStyles = makeStyles(theme =>({
     root: {
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        transform: 'translateZ(0)'
     },
     searchInput: {
         opacity: '0.6',

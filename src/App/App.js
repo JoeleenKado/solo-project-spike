@@ -21,6 +21,17 @@ const theme = createMuiTheme({
     background: {
       default: 'yellow'
     }
+  },
+  shape: {
+    borderRadius: '100px'
+  },
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)'
+
+      }
+    }
   }
 })
 
