@@ -20,7 +20,7 @@ const genderItems = [
 
 ]
 //here we will space our inputs so they are not butted up against eachother.
-const useStyle = makeStyles(theme =>({
+const useStyles = makeStyles(theme =>({
     root: {
    '& .MuiFormControl-root' : {
        width: '80%',
@@ -50,7 +50,7 @@ export default function EmployeeForm() {
 //     handleInputChange
 // }=useForm(initialFValues);
 const [values, setValues] = useState(initialFValues);
-const classes = useStyle();
+const classes = useStyles();
 
     return (
            <form className={classes.root}>
