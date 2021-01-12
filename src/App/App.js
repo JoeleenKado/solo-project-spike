@@ -58,11 +58,7 @@ function App() {
        <div className={classes.appMain}>
        <Header/>
 
-<PageHeader
-       title='Page Header'
-       subTitle='Page Description'
-       icon={<PeopleOutlineIcon fontSize='large'/>}
-       />
+
        <Employees/>
        </div>
        <CssBaseline/>

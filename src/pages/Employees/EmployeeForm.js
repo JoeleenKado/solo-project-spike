@@ -1,6 +1,6 @@
 //import { AppBar } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
-import {Grid} from '@material-ui/core';
+import {Grid, TextField} from '@material-ui/core';
 // import FourKIcon from '@material-ui/icons/FourK';
 // import ThreeSixtyIcon from '@material-ui/icons/ThreeSixty';
 // import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
@@ -20,8 +20,6 @@ const genderItems = [
 
 ]
 
-
-
 const initialFValues = {
     id: 0,
     fullName: '',
@@ -34,69 +32,34 @@ const initialFValues = {
     isPermanent: false
 }
 
-
 export default function EmployeeForm() {
 
 
-const{
-    values,
-    setValues,
-    handleInputChange
-}=useForm(initialFValues);
-
-
-
-
+// const{
+//     values,
+//     setValues,
+//     handleInputChange
+// }=useForm(initialFValues);
+const [values, setValues] = useState(initialFValues);
 
     return (
-            <Form>
-            <Grid container>
-                <Grid item xs={6}>
+           <form>
+               <Grid container>
+                   <Grid item xs={6}>
+                       <TextField
+                       variant="outlined"
+                       label="Full Name"
+                       value={values.fullName}>
+                       </TextField> 
+                       <TextField
+                       variant="outlined"
+                       label="email"
+                       value={values.email}>
+                       </TextField>
+                   </Grid>
+                   <Grid item xs={6}></Grid>
 
-                   <Controls.Input
-                   name="fullName"
-                   label="Full Name"
-                value={values.fullName}
-                onChange={handleInputChange}/>
-                    
-                    <Controls.Input
-                        variant="outlined"
-                        label="email"
-                        name="email"
-                        value={values.email}
-                        onChange = {handleInputChange}
-
-                         />
-                </Grid>
-                <Grid item xs={6}>
-                <Controls.RadioGroup
-name="gender"
-label="Gender"
-value={values.gender} 
-onChange = {handleInputChange}
-items={genderItems}
-
-                
-                />
-
-                <Controls.Select
-                name="departmentId"
-                label="Department"
-                value={values.departmentId}  
-                onChange={handleInputChange} 
-                options={employeeService.getDepartmentCollection()}
-                    />
-<Controls.Checkbox
-name="isPermanent"
-label="Permanent Employee"
-value={values.isPermanent}
-onChange={handleInputChange} 
-
-/>
-                </Grid>
-
-            </Grid>
-            </Form>
-
-    )
+               </Grid>
+           </form>
+   )
 }
