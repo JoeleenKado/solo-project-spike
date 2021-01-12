@@ -32,6 +32,9 @@ const theme = createMuiTheme({
 
       }
     }
+  },
+  shape: {
+    borderRadius: '10px'
   }
 })
 
