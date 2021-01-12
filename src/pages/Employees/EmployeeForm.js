@@ -1,6 +1,6 @@
 //import { AppBar } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
-import {Grid, TextField} from '@material-ui/core';
+import {Grid, makeStyles, TextField} from '@material-ui/core';
 // import FourKIcon from '@material-ui/icons/FourK';
 // import ThreeSixtyIcon from '@material-ui/icons/ThreeSixty';
 // import DeleteSharpIcon from '@material-ui/icons/DeleteSharp';
@@ -19,6 +19,15 @@ const genderItems = [
     {id:'other', title: 'Other'},
 
 ]
+//here we will space our inputs so they are not butted up against eachother.
+const useStyle = makeStyles(theme =>({
+    root: {
+   '& .MuiFormControl-root' : {
+       width: '80%',
+       margin: theme.spacing(1)
+   }
+    }
+}))
 
 const initialFValues = {
     id: 0,
@@ -41,9 +50,10 @@ export default function EmployeeForm() {
 //     handleInputChange
 // }=useForm(initialFValues);
 const [values, setValues] = useState(initialFValues);
+const classes = useStyle();
 
     return (
-           <form>
+           <form className={classes.root}>
                <Grid container>
                    <Grid item xs={6}>
                        <TextField
