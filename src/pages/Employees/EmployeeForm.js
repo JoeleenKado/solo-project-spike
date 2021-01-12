@@ -52,6 +52,14 @@ export default function EmployeeForm() {
 const [values, setValues] = useState(initialFValues);
 const classes = useStyles();
 
+const handleInputChange = e=> {
+    const {name, value} = e.target
+    setValues({
+        ...values,
+        [name]: value
+    })
+}
+
     return (
            <form className={classes.root}>
                <Grid container>
@@ -59,12 +67,16 @@ const classes = useStyles();
                        <TextField
                        variant="outlined"
                        label="Full Name"
-                       value={values.fullName}>
+                       name="fullName"
+                       value={values.fullName}
+                        onChange={handleInputChange}>
                        </TextField> 
                        <TextField
                        variant="outlined"
                        label="email"
-                       value={values.email}>
+                       name="email"
+                       value={values.email}
+                           onChange={handleInputChange}>
                        </TextField>
                    </Grid>
                    <Grid item xs={6}></Grid>
