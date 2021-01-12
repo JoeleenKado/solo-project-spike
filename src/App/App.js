@@ -7,6 +7,7 @@ import './App.css';
 import Header from '../Components/Header'
 import PageHeader from '../Components/PageHeader';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
+import Employees from '../pages/Employees/Employees'
 
 const theme = createMuiTheme({
   pallet: {
@@ -33,8 +34,10 @@ const theme = createMuiTheme({
       }
     }
   },
-  shape: {
-    borderRadius: '10px'
+  props : {
+    MuiIconButton: {
+      disableRipple: false //disable the ripple effect when you click an icon
+    }
   }
 })
 
@@ -54,11 +57,13 @@ function App() {
     <SideMenu/>
        <div className={classes.appMain}>
        <Header/>
-       <PageHeader
+
+<PageHeader
        title='Page Header'
        subTitle='Page Description'
        icon={<PeopleOutlineIcon fontSize='large'/>}
        />
+       <Employees/>
        </div>
        <CssBaseline/>
        </ThemeProvider>
